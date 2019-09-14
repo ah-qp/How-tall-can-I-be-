@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>내 키는 얼마나 클 수 있을까?</title>
+	<link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet">
+	
+	<style type="text/css">
+		body{margin: auto;text-align: center;width: 600px;font-family: 'Jua', sans-serif;color: #F89436}
+
+		.box1{height: 150px; margin: 0px;}
+		h1{background-color: #FEFDD0;padding:20px;margin-top: 0px;border-bottom: 5px solid #F9F846;border-radius: 10px;
+				color: #F77911;font-family: 'Jua', sans-serif;font-size: 28px;}
+		.box1 p{font-size: 15px;}
+
+		.box2{height: 400px; margin: 0px;}
+		#myname{height:25px;background-color: #FEFDD0;border: none;border-bottom: #F9F846;border-radius: 5px;text-align: center;padding-top:3px;}
+		#okbut{background-color: white;border:none;}
+		#monitor{font-size: 20px;padding-bottom: 20px;
+			border-bottom: 5px solid #F9F846;border-radius: 10px;}
+
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<h1>내 키는 얼마나 클 수 있을까?</h1>
+		<p>본 계산은 후천적인 요인에 따라 실제 키와 결과가 아예 다를 수도 있습니다.</p>
+		
+
+	</div>
+
+	<div class="box2">	
+		<input type="text" id="myname" placeholder="이름을 입력하시오.">
+		<br>
+		<input type="button" id="okbut" onclick="alert">
+		
+		<br>
+		<p>아버지의 키</p> 
+		100<input type="range" id="faheight" min="100" max="200">200
+		<div id="fa">150</div>
+		<br><br>
+		<p>어머니의 키</p>
+		100<input type="range" id="moheight" min="100" max="200">200
+		<div id="mo">150</div>
+		<br><br>
+		
+		
+		<div id="monitor"> 당신의 예상키는 000cm 입니다.</div>
+
+		<script type="text/javascript">
+			faheight.oninput = function(){
+				fa.innerHTML = faheight.value
+				var myheight = (faheight.value*1 + moheight.value*1)/2-6.5 ;
+				monitor.innerHTML = 
+				myname.value + "님, 의 예상키는 " + myheight + "cm입니다."
+			}
+
+			moheight.oninput = function(){
+				mo.innerHTML = moheight.value
+				var myheight = (faheight.value*1 + moheight.value*1)/2-6.5 ;
+				monitor.innerHTML = 
+				myname.value + "님, 의 예상키는 " + myheight + "cm입니다."
+			}
+
+
+		</script>
+	</div>
+</body>
+</html>
